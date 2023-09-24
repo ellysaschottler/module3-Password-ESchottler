@@ -14,34 +14,51 @@ function generatePassword() {
   // code that uses that number...
   
 }
-
-function getValidCharacterNumber() {
-  let characterNumber = prompt(
-    "Choose a password character length between 8 and 128.",
-    "8"
-  );
+let characterNumber = prompt("Choose a password character length between 8 and 128.", "8");
 
   if (characterNumber < 8 || characterNumber > 128) {
     alert(
-      "characterNumber is an invalid number of characters, please indicate a number between 8-128"
+      "This is an invalid number of characters."
     );
-    return getValidCharacterNumber();
-  }
 
-  return characterNumber
+  } else if (characterNumber >= 8 && characterNumber <=128){
+    alert ("Your password will be $[characterNumber] characters long.  Please answer the next questions to determine the character types in your password.")
+  };
+
+
+function getValidCharacters (lowercaseLetters, uppercaseLetters, numericCharacters, specialCharacters) {
+    let characterTypeCount
+    if (confirm("Include lowercase letters?") == true) {
+        lowercaseLetters = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx";
+        characterTypeCount = +1;
+        } else {lowercaseLetters = '';
+        }
+    
+    if (confirm ("Include uppercase letters?") == true) {
+          uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWX";
+          characterTypeCount = +1;
+    } else {uppercaseLetters = '';
+    }
+
+    if (confirm ("Include numeric characters?") == true) {
+        numericCharacters = "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567";
+        characterTypeCount = +1
+    } else {numericCharacters = '';
+    }
+
+    if (confirm ("Include uppercase special characters?") == true) {
+        specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*";
+        characterTypeCount = +1;
+    } else {specialCharacters = '';
+    }
+    return lowercaseLetters + uppercaseLetters + numericCharacters + specialCharacters;
+    let characterTypeTotal = 
 }
 
-function getValidCharacters() {
-  let possibleCharacters = "";
-  if  = confirm("Include lowercase characters?");
-  //append abcdefghijklmnopqrstuvwxyz
-  if  = confirm("Include uppercase characters?");
-  //append ABCDEFGHIJKLMNOPQRSTUVWXYZ
-  if = confirm("Include numeric characters?");
-  //append 0123456789
-  if = confirm("Include special characters?");
-  //append " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
+
+getValidCharacters()
+console.log(getValidCharacters)
 
 
   if getValidCharacters is empty
@@ -49,8 +66,15 @@ function getValidCharacters() {
       "Please select at least one character type to generate your password."
     );
     getValidCharacters();
-  }
-}
+  
+
+// idea for validating password
+if (createdPassword.includes("a"|"b"|"c"|"d|"))&& (createdPassword.includes("A","B","C"))
+
+// idea for generating password - use getValidCharacters / characterTypeTotal = numberEachCharacterType
+// use a for loop to keep adding characters to the password while less than the characterNumber. 
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
