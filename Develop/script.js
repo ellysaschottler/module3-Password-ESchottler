@@ -1,32 +1,19 @@
 // Assignment code here
 
-// when the user clicks the button, the prompts appear in a writePassword function
-
-// when the prompts finish, the password generates into the #password field
-
-// need to make a generatePassword function
-
-//The generatePassword function has two parts - one function for getting the number of characters and one function for indicating what variable types are to be included.
 
 function generatePassword() {
   let characterNumber = getValidCharacterNumber();
   console.log(characterNumber)
   let validCharacters = getValidCharacters()
-  console.log(validCharacters)
+  
+  
 
-// psuedocode for generating the password given the parameters of characterNumber and validCharacters
-function getRandomCharacterIndex(){
-let randomCharacterIndex = Math.floor(Math.random() *characterNumber);
-return randomCharacterIndex
-}
+  let password = ""
 
-
-for (i= ""; i.length < characterNumber; i++) {
-  i = i + validCharacters.charAt(getRandomCharacterIndex());
-    console.log(i)
+  for (let i= 0; i < characterNumber; i++) {
+    password = password + validCharacters.charAt(Math.floor(Math.random() *validCharacters.length));
+    console.log(password)
   }
-
- 
 }
 
 function getValidCharacterNumber(){
@@ -51,40 +38,37 @@ function getValidCharacters () {
     let numericCharacters
     let specialCharacters
     if (confirm("Include lowercase letters?") == true) {
-        lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    } else {lowercaseLetters = '';
+      lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    } else {
+      lowercaseLetters = '';
     }
     
     if (confirm ("Include uppercase letters?") == true) {
-        uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    } else {uppercaseLetters = '';
+      uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    } else {
+      uppercaseLetters = '';
     }
 
     if (confirm ("Include numeric characters?") == true) {
-        numericCharacters = "0123456789";
-    } else {numericCharacters = '';
+      numericCharacters = "0123456789";
+    } else {
+      numericCharacters = '';
     }
 
     if (confirm ("Include special characters?") == true) {
-        specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-    } else {specialCharacters = '';
+      specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    } else {
+      specialCharacters = '';
+    }
+
+    if (lowercaseLetters + uppercaseLetters + numericCharacters + specialCharacters == "") {
+      alert ("Please choose at least one character type!")
+      return getValidCharacters()
     }
 
     return lowercaseLetters + uppercaseLetters + numericCharacters + specialCharacters;
 }
 
-
-
-
-
-
-  
-
-// idea for validating password
-//if (createdPassword.includes("a"|"b"|"c"|"d|"))&& (createdPassword.includes("A","B","C"))
-
-// idea for generating password - use getValidCharacters / characterTypeTotal = numberEachCharacterType
-// use a for loop to keep adding characters to the password while less than the characterNumber. 
 
 
 
