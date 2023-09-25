@@ -14,6 +14,7 @@ function generatePassword() {
     password = password + validCharacters.charAt(Math.floor(Math.random() *validCharacters.length));
     console.log(password)
   }
+  return password
 }
 
 function getValidCharacterNumber(){
