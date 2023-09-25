@@ -1,6 +1,6 @@
-# Password Generator Starter Code
 
-# <Password Generator Starter Code - Module 3>
+
+# Password Generator Starter Code - Module 3
 
 ## Description
 
@@ -16,7 +16,7 @@ N/A
 View my password generator at: https://ellysaschottler.github.io/module3-Password-ESchottler/Develop/
 
 
-Screenshot of my work: ![Screenshot](Develop/PasswordScreenshot.png)
+Screenshot of my work: ![Screenshot](/PasswordScreenshot.png)
 
 ## Credits
 
