@@ -10,66 +10,68 @@
 
 function generatePassword() {
   let characterNumber = getValidCharacterNumber();
-
+  console.log(characterNumber)
+  let validCharacters = getValidCharacters()
+  console.log(validCharacters)
   // code that uses that number...
+
+ 
   
 }
-let characterNumber = prompt("Choose a password character length between 8 and 128.", "8");
-
+function getValidCharacterNumber(){
+  let characterNumber = prompt("Choose a password character length between 8 and 128.", "8");
+  
   if (characterNumber < 8 || characterNumber > 128) {
-    alert(
-      "This is an invalid number of characters."
-    );
+      alert(
+        "This is an invalid number of characters."
+      );
+      return getValidCharacterNumber();
 
   } else if (characterNumber >= 8 && characterNumber <=128){
-    alert ("Your password will be $[characterNumber] characters long.  Please answer the next questions to determine the character types in your password.")
+      alert (`Your password will be ${characterNumber} characters long.  Please answer the next questions to determine the character types in your password.`)
   };
 
+  return characterNumber
+}
 
-function getValidCharacters (lowercaseLetters, uppercaseLetters, numericCharacters, specialCharacters) {
-    let characterTypeCount
+function getValidCharacters () {
+    let lowercaseLetters
+    let uppercaseLetters
+    let numericCharacters
+    let specialCharacters
     if (confirm("Include lowercase letters?") == true) {
-        lowercaseLetters = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwx";
-        characterTypeCount = +1;
-        } else {lowercaseLetters = '';
-        }
+        lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    } else {lowercaseLetters = '';
+    }
     
     if (confirm ("Include uppercase letters?") == true) {
-          uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWX";
-          characterTypeCount = +1;
+        uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     } else {uppercaseLetters = '';
     }
 
     if (confirm ("Include numeric characters?") == true) {
-        numericCharacters = "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567";
-        characterTypeCount = +1
+        numericCharacters = "0123456789";
     } else {numericCharacters = '';
     }
 
-    if (confirm ("Include uppercase special characters?") == true) {
-        specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*+,-./:;<=>?@[\]^_`{|}~!#$%&'()*";
-        characterTypeCount = +1;
+    if (confirm ("Include special characters?") == true) {
+        specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     } else {specialCharacters = '';
     }
+
     return lowercaseLetters + uppercaseLetters + numericCharacters + specialCharacters;
-    let characterTypeTotal = 
 }
 
 
 
-getValidCharacters()
-console.log(getValidCharacters)
 
 
-  if getValidCharacters is empty
-    alert(
-      "Please select at least one character type to generate your password."
-    );
-    getValidCharacters();
+
+
   
 
 // idea for validating password
-if (createdPassword.includes("a"|"b"|"c"|"d|"))&& (createdPassword.includes("A","B","C"))
+//if (createdPassword.includes("a"|"b"|"c"|"d|"))&& (createdPassword.includes("A","B","C"))
 
 // idea for generating password - use getValidCharacters / characterTypeTotal = numberEachCharacterType
 // use a for loop to keep adding characters to the password while less than the characterNumber. 
