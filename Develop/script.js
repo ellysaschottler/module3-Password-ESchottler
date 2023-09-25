@@ -13,11 +13,22 @@ function generatePassword() {
   console.log(characterNumber)
   let validCharacters = getValidCharacters()
   console.log(validCharacters)
-  // code that uses that number...
+
+// psuedocode for generating the password given the parameters of characterNumber and validCharacters
+function getRandomCharacterIndex(){
+let randomCharacterIndex = Math.floor(Math.random() *characterNumber);
+return randomCharacterIndex
+}
+
+
+for (i= ""; i.length < characterNumber; i++) {
+  i = i + validCharacters.charAt(getRandomCharacterIndex());
+    console.log(i)
+  }
 
  
-  
 }
+
 function getValidCharacterNumber(){
   let characterNumber = prompt("Choose a password character length between 8 and 128.", "8");
   
@@ -61,7 +72,6 @@ function getValidCharacters () {
 
     return lowercaseLetters + uppercaseLetters + numericCharacters + specialCharacters;
 }
-
 
 
 
